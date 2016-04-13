@@ -10,15 +10,15 @@ Check out this repository to to ```/site/plugins/``` or include it as a submodul
 
 You can preview your sitemap by browsing to http://your-fancy-kirby-site.net/sitemap.xml.
 
-The plugin can be configured via Kirby’s ```config.php`.
+The plugin can be configured via Kirby’s ```config.php```.
 
 ### Exclude Pages From the Sitemap
 
 ```php
 c::set('sitemap.exclude', [
     'error', // just the page error
-    'example*' // exclude all pages starting with example
-    'example/*' // exclude only subpages of example (but include example)
+    'example*', // exclude all pages starting with example
+    'example/*', // exclude only subpages of example (but include example)
 ]);
 ```
 
@@ -27,8 +27,8 @@ c::set('sitemap.exclude', [
 ```php
 c::set('sitemap.exclude', [
     'contact', // just the page contact
-    'important*' // all pages starting with important
-    'important/*' // all subpages of important (but not important)
+    'important*', // all pages starting with important
+    'important/*', // all subpages of important (but not important)
 ]);
 
 c::set('sitemap.priority', false); // disable prioritization 
