@@ -31,12 +31,12 @@ function sitemapRouteIsImportant($url) {
 }
 
 kirby()->routes(array(
-	array(
-		'pattern' => 'sitemap.xml',
-		'action'  => function() {
+    array(
+        'pattern' => 'sitemap.xml',
+        'action'  => function() {
 
-			$sitemap = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset />');
-			$sitemap->addAttribute('xmlns', "http://www.sitemaps.org/schemas/sitemap/0.9");
+            $sitemap = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset />');
+            $sitemap->addAttribute('xmlns', "http://www.sitemaps.org/schemas/sitemap/0.9");
 
             foreach (site()->pages()->index() as $p) {
                 if (!sitemapRouteIsExcluded($p->uri())) {
@@ -51,6 +51,6 @@ kirby()->routes(array(
             }
 
             return new Response($sitemap->asXML(), 'xml');
-		}
-	)
+        }
+    )
 ));
