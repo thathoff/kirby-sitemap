@@ -4,7 +4,7 @@ This plugin generates a ```sitemap.xml``` from all pages in Kirby. It's possible
 
 ## Installation
 
-Check out this repository to to ```/site/plugins/``` or include it as a submodule.
+Check out this repository to to ```/site/plugins/``` or include it as a submodule `git submodule add https://github.com/blankogmbh/kirby-sitemap.git site/plugins/kirby-sitemap`.
 
 ## Usage
 
