@@ -25,7 +25,7 @@ c::set('sitemap.exclude', [
 ### Prioritize Pages
 
 ```php
-c::set('sitemap.exclude', [
+c::set('sitemap.priority', [
     'contact', // just the page contact
     'important*', // all pages starting with important
     'important/*', // all subpages of important (but not important)
