@@ -1,0 +1,15 @@
+{
+  "name": "kirby-sitemap",
+  "version": "1.1.0",
+  "description": "Kirby plugin for creating a sitemap.xml",
+  "type": "kirby-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blankogmbh/kirby-sitemap.git"
+  },
+  "author": "Markus Denhoff <denhoff@blanko.de> (https://blanko.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blankogmbh/kirby-sitemap/issues"
+  }
+}
