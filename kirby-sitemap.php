@@ -41,6 +41,17 @@ kirby()->routes(array(
 
             foreach (site()->pages()->index() as $p) {
                 if (!sitemapRouteIsExcluded($p->uri())) {
+                    if (
+                        c::get('sitemap.excludeHiddenPages', false)
+                        && $p->isInvisible()
+                        && !(
+                            c::get('sitemap.includeHiddenRootPages', true)
+                            && $p->depth() == 1
+                        )
+                    ) {
+                        continue;
+                    }
+
                     $url = $sitemap->addChild("url");
                     $url->addChild("loc", html($p->url()));
                     $url->addChild("lastmod", $p->modified('c'));
