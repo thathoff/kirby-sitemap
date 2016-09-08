@@ -26,6 +26,19 @@ c::set('sitemap.exclude', [
 ]);
 ```
 
+### Exclude hidden Pages
+
+```php
+c::set('sitemap.excludeHiddenPages', true);
+```
+
+### Include hidden pages on root level
+If you set `sitemap.excludeHiddenPages` to true, but want the hidden root pages to be included
+
+```php
+c::set('sitemap.includeHiddenRootPages', true);
+```
+
 ### Prioritize Pages
 
 ```php
