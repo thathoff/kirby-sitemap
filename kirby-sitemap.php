@@ -30,6 +30,18 @@ function sitemapRouteIsImportant($url) {
     }
 }
 
+function pingGoogle() {
+    $googleWebmasterUrl = 'http://www.google.com/webmasters/tools/ping?sitemap=';
+    $urlToSitemap = site()->url() . '/sitemap.xml';
+
+    $url = $googleWebmasterUrl . urlencode($urlToSitemap);
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_exec($ch);
+    curl_close($ch);
+}
+
 kirby()->routes(array(
     array(
         'pattern' => 'sitemap.xml',
@@ -76,3 +88,33 @@ kirby()->routes(array(
         }
     )
 ));
+
+if (c::get('sitemap.pingGoogle', false)) {
+    if (kirby()->version() >= '2.3.2') {
+        kirby()->hook([
+            'panel.page.create',
+            'panel.page.delete',
+            'panel.page.sort',
+            'panel.page.hide',
+            'panel.page.move',
+        ], function($page) {
+            pingGoogle();
+        });
+    } else {
+        kirby()->hook('panel.page.create', function($page) {
+            pingGoogle();
+        });
+        kirby()->hook('panel.page.delete', function($page) {
+            pingGoogle();
+        });
+        kirby()->hook('panel.page.sort', function($page) {
+            pingGoogle();
+        });
+        kirby()->hook('panel.page.hide', function($page) {
+            pingGoogle();
+        });
+        kirby()->hook('panel.page.move', function($page) {
+            pingGoogle();
+        });
+    }
+}

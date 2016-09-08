@@ -51,6 +51,12 @@ c::set('sitemap.priority', [
 c::set('sitemap.priority', false); // disable prioritization 
 ```
 
+### Ping Google on page [create, delete, sort, hide, move](https://getkirby.com/docs/developer-guide/advanced/hooks)
+
+```
+c::set('sitemap.pingGoogle', true);
+```
+
 ## Author
 
 Markus Denhoff / Blanko <denhoff@blanko.de>
