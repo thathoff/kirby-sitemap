@@ -4,6 +4,10 @@ This plugin generates a ```sitemap.xml``` from all pages in Kirby. It's possible
 
 ## Installation
 
+### Composer
+
+`composer require blankogmbh/kirby-sitemap`
+
 ### Kirby CLI
 `kirby plugin:install blankogmbh/kirby-sitemap`
 
