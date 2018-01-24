@@ -52,13 +52,18 @@ c::set('sitemap.priority', [
     'important/*', // all subpages of important (but not important)
 ]);
 
-c::set('sitemap.priority', false); // disable prioritization 
+c::set('sitemap.priority', false); // disable prioritization
 ```
 
 ### Ping Google on page [create, delete, sort, hide, move](https://getkirby.com/docs/developer-guide/advanced/hooks)
 
-```
+```php
 c::set('sitemap.pingGoogle', true);
+```
+
+### Change route pattern
+```php
+c::set('sitemap.route.pattern', 'sitemap-xml');
 ```
 
 ## Author

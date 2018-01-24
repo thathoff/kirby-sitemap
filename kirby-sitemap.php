@@ -44,7 +44,7 @@ function pingGoogle() {
 
 kirby()->routes(array(
     array(
-        'pattern' => 'sitemap.xml',
+        'pattern' => c::get('sitemap.route.pattern', 'sitemap.xml'),
         'action'  => function() {
 
             $sitemap = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset />');
